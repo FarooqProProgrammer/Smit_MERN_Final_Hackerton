@@ -2,6 +2,7 @@
 import DefaultLayout from '@/components/Layouts/DefaultLayout'
 import DataTable from 'react-data-table-component';
 import React from 'react'
+import Link from 'next/link';
 const Student = () => {
 
 
@@ -50,8 +51,9 @@ const Student = () => {
   return (
     <DefaultLayout>
       <div className="bg-white p-2">
-        <div className="mb-2">
-          <button onClick={()=>window.location.href = "/student/add-students"} className='bg-[#1C2434] text-white p-2 rounded-md cursor-pointer'>Add Students</button>
+        <div className="mb-2 mt-3">
+          {/* <button onClick={()=>window.location.href = "/student/add-students"} className='bg-[#1C2434] text-white p-2 rounded-md cursor-pointer'>Add Students</button> */}
+          <Link href={'/student/add-students'} className='bg-[#1C2434]  text-white p-2 rounded-md cursor-pointer'>Add Students</Link>
         </div>
         <DataTable
           columns={columns}

@@ -6,6 +6,7 @@ import "@/css/style.css";
 import React, { useEffect, useState } from "react";
 import Loader from "@/components/common/Loader";
 import { ToastContainer } from "react-toastify";
+import StoreProvider from "./StoreProvider";
 
 export default function RootLayout({
   children,
@@ -24,10 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
-        <div className="dark:bg-boxdark-2 dark:text-bodydark">
-          {loading ? <Loader /> : children}
-        </div>
-        <ToastContainer />
+        <StoreProvider>
+          <div className="dark:bg-boxdark-2 dark:text-bodydark">
+            {loading ? <Loader /> : children}
+          </div>
+          <ToastContainer />
+        </StoreProvider>
       </body>
     </html>
   );
