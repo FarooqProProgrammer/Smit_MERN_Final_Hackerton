@@ -23,7 +23,7 @@ const Page = () => {
         },
         {
             name: 'Action',
-            cell: row => <button className="bg-blue-600 text-white p-2 rounded-md">Submit</button>,
+            cell: row => <button className="bg-blue-600 text-white p-2 rounded-md">Marked</button>,
             ignoreRowClick: true,
             allowOverflow: true,
             button: true,
