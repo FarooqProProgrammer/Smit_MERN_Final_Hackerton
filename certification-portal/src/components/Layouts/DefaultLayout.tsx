@@ -1,7 +1,8 @@
 "use client";
-import React, { useState, ReactNode } from "react";
+import React, { useState, ReactNode, useEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
+import { useLocalStorage } from "react-use";
 
 export default function DefaultLayout({
   children,
@@ -9,6 +10,17 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const [value, setValue, remove] = useLocalStorage('auth', 'foo');
+
+  useEffect(() => {
+      if(!value.accessToken) { 
+        window.location.href = "/auth/signin"
+      }
+   }, [value],)
+
+
+
   return (
     <>
       {/* <!-- ===== Page Wrapper Start ===== --> */}

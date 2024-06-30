@@ -9,6 +9,7 @@ import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import { PiStudent } from "react-icons/pi";
 import { CiUser } from "react-icons/ci";
+import { AiFillCalendar } from "react-icons/ai";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -37,7 +38,7 @@ const menuGroups = [
       },
       {
         icon: (
-          <CiUser />
+          <AiFillCalendar />
         ),
         label: "Batch",
         route: "/batch",
