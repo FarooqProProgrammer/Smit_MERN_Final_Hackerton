@@ -1,28 +1,26 @@
 import mongoose from "mongoose";
+const Schema = mongoose.Schema;
 
-const batchSchema = new mongoose.Schema(
-    {
-        name: {
-            type: String,
-            required: true
-        },
-        startDate: {
-            type: Date,
-            required: true
-        },
-        endDate: {
-            type: Date,
-            required: true
-        },
-        description: {
-            type: String
-        }
-    },
-    {
-        timestamps: true
-    }
-);
+const batchSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  startDate: {
+    type: String,
+    required: true
+  },
+  endDate: {
+    type: String,
+    required: true
+  },
+  course: {
+    type: Schema.Types.ObjectId,
+    ref: 'Course',
+    required: true
+  }
+});
 
-const Batch = mongoose.model("Batch", batchSchema);
+const Batch = mongoose.model('Batch', batchSchema);
 
 export default Batch;
